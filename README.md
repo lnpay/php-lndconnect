@@ -20,7 +20,7 @@ For more information take a look at the [specification of the uri format](https:
 ## Install
 
 ```
-composer require lnpay/lndconnect
+composer require lnpay/php-lndconnect
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ composer require lnpay/lndconnect
 Formats a host / cert / macaroon combo into an lndconnect link.
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::format('127.0.0.1:10009','MIICuDCCAl...','AgEDbG5kAus...');
 
@@ -42,7 +42,7 @@ LndConnect::format('127.0.0.1:10009','MIICuDCCAl...','AgEDbG5kAus...');
 Encodes a host / cert / macaroon combo and formats into an lndconnect link.
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::encode('127.0.0.1:10009','-----BEGIN CERTIFICATE-----...','0201036c6...');
 
@@ -55,7 +55,7 @@ LndConnect::encode('127.0.0.1:10009','-----BEGIN CERTIFICATE-----...','0201036c6
 Decodes an lndconnect link into it's component parts (host / cert as utf8 / macaroon as hex)
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::decode('lndconnect://127.0.0.1:10001?cert=MIICDjCCAbSgAwI&macaroon=AgEDbG5');
 
@@ -75,7 +75,7 @@ LndConnect::decode('lndconnect://127.0.0.1:10001?cert=MIICDjCCAbSgAwI&macaroon=A
 Encodes a certificate string to base64url encoded DER format.
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::encodeCert('-----BEGIN CERTIFICATE-----\n.....');
 
@@ -87,7 +87,7 @@ LndConnect::encodeCert('-----BEGIN CERTIFICATE-----\n.....');
 Decodes a certificate from base64url encoded DER format to a string.
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::decodeCert('MIICDjCCAbSgAwI');
 
@@ -101,7 +101,7 @@ LndConnect::decodeCert('MIICDjCCAbSgAwI');
 Encodes a binary macaroon hex to base64url encoded string.
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::encodeMacaroon('0201036c6...');
 
@@ -113,7 +113,7 @@ LndConnect::encodeMacaroon('0201036c6...');
 Decodes a base64url encoded macaroon to a hex encoded macaroon.
 
 ```php
-use lnpay\LndConnect;
+use LndConnect\LndConnect;
 
 LndConnect::decodeMacaroon('AgEDbG5kAus...');
 
